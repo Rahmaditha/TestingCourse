@@ -1,7 +1,7 @@
 package com.plcoding.testingcourse.core.data
 
 import com.plcoding.testingcourse.core.domain.Product
-import com.plcoding.testingcourseexamples.part1.domain.ShoppingCartCache
+import com.plcoding.testingcourse.core.domain.ShoppingCartCache
 
 class ShoppingCartCacheFake: ShoppingCartCache {
 

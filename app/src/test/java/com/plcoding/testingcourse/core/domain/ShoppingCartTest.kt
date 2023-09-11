@@ -24,15 +24,15 @@ internal class ShoppingCartTest {
     }
 
     @Test
-    fun `Test products are saved in cache`(){
-        val product = Product(id = 1, name = "Ice Cream", price = 5.0)
+    fun `Test products are saved in cache`() {
+        val product = Product(id = 1, name = "Ice cream", price = 5.0)
 
-        cart.addProduct(product, quantity = 2)
+        cart.addProduct(product, 2)
 
-        val productsCacheFake = cacheFake.loadCart()
+        val productsFromCache = cacheFake.loadCart()
 
-        assertThat(productsCacheFake).hasSize(2)
-        assertThat(productsCacheFake).contains(product)
+        assertThat(productsFromCache).hasSize(2)
+        assertThat(productsFromCache).contains(product)
     }
 
     @ParameterizedTest

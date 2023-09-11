@@ -12,19 +12,16 @@ class ProductRepositoryFake: ProductRepository {
         products.forEach {
             purchasedProducts.add(it)
         }
-
-        return if(shouldReturnError){
+        return if(shouldReturnError) {
             Result.failure(Exception())
         } else Result.success(Unit)
     }
 
     override suspend fun cancelPurchase(purchaseId: Int): Result<Unit> {
-
         purchasedProducts.removeIf {
             it.id == purchaseId
         }
-
-        return if(shouldReturnError){
+        return if(shouldReturnError) {
             Result.failure(Exception())
         } else Result.success(Unit)
     }
